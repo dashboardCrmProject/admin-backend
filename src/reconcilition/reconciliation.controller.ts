@@ -10,6 +10,11 @@ export class ReconciliationController {
     return this.ReconciliationService.create(createCustomerDto);
   }
 
+  @Post('search')
+  search(@Body() createCustomerDto: any) {
+    return this.ReconciliationService.search(createCustomerDto);
+  }
+
   @Get()
   findAll() {
     return this.ReconciliationService.findAll();

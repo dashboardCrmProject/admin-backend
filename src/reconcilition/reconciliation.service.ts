@@ -12,6 +12,21 @@ export class ReconciliationService {
     return createdApplication.save();
   }
 
+  async search(application: Reconciliation): Promise<Reconciliation[]> {
+    // @ts-ignore
+    const { branch, teamMember, productCategory, bank, month, year } = application;
+    return this.applicationModel.find({
+      $and: [
+        { branch },
+        { teamMember },
+        { productCategory },
+        { bank },
+        { month },
+        { year },
+      ],
+    }).exec();
+  }
+
   async findAll(): Promise<Reconciliation[]> {
     return this.applicationModel.find().exec();
   }
