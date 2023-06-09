@@ -10,6 +10,11 @@ export class PaymentController {
     return this.PaymentService.create(createCustomerDto);
   }
 
+  @Post('search')
+  search(@Body() createCustomerDto: any) {
+    return this.PaymentService.search(createCustomerDto);
+  }
+
   @Get()
   findAll() {
     return this.PaymentService.findAll();

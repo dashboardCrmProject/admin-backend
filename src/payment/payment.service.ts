@@ -12,6 +12,20 @@ export class PaymentService {
     return createdApplication.save();
   }
 
+  async search(application: Payment): Promise<Payment[]> {
+    // @ts-ignore
+    const { branch, teamMember, paymentFor, month, year } = application;
+    return this.applicationModel.find({
+      $and: [
+        { branch },
+        { teamMember },
+        { paymentFor },
+        { month },
+        { year },
+      ],
+    }).exec();
+  }
+
   async findAll(): Promise<Payment[]> {
     return this.applicationModel.find().exec();
   }
