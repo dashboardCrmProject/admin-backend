@@ -17,7 +17,7 @@ import { BankModule } from './bank/bank.module';
     ReconciliationModule,
     UserModule,
     BankModule,
-    MongooseModule.forRoot('mongodb+srv://db1:db1password@cluster0.zyw0kah.mongodb.net/'),
+    MongooseModule.forRoot('mongodb+srv://techdev1170:vEDpfxqNoxLoCaZc@cluster0.acqptz6.mongodb.net/'),
   ],
   controllers: [AppController],
   providers: [AppService],
